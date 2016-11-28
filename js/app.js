@@ -7,19 +7,22 @@ angular.module('devmtnTravel', ['ui.router'])
             })
             .state('locations', {
             	url: '/locations/',
-            	templateUrl: "../views/locations.html"
+            	templateUrl: "../views/locations.html",
+            	controller: 'locationCtrl'
             })
             .state('packages', {
             	url:"/packages/",
-            	templateUrl: "../views/packages.html"
+            	templateUrl: "../views/packages.html",
+            	controller:'locationCtrl'
             })
             .state('adventurers', {
-            	url:"/about/",
+            	url:"/adventures",
+            	parent:'home',
             	templateUrl: "../views/about-adventurers.html"
             })
             .state('contact', {
-            	url:"/contact/",
-            	// parent: '',
+            	url:"/contact",
+            	parent: 'home',
             	templateUrl:"../views/contact.html"
             })
             .state('booked', {

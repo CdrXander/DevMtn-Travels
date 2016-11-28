@@ -1,13 +1,15 @@
 angular.module('devmtnTravel').controller('bookedCtrl', function($scope, $stateParams, mainSrv) {
 
 	var cityObj;
-	if($stateParams.id === 'NewYork') {
-		cityObj = mainSrv.travelInfo[0];
-	} else if ($stateParams.id == "Paris") {
-		cityObj = mainSrv.travelInfo[1];
-	} else if ($stateParams.id === "Sydney") {
-		cityObj = mainSrv.travelInfo[2];
+	var travelInfo = mainSrv.travelInfo;
+
+	for(var i = 0; i < travelInfo.length; i ++ ) {
+		if($stateParams.id == travelInfo[i].id) {
+			cityObj = travelInfo[i];
+			break;
+		}
 	}
+	
 	
 	$scope.cityName = cityObj.city;
 	$scope.bgImg = {"background-image" : "url(" + cityObj.image + ")"};

@@ -3,7 +3,8 @@
     height: 400px;
     margin: auto ;
     text-align: center;
-    background-size: cover;
+    background-size: 50vw;
+    background-position: center;
     background-repeat: no-repeat;
     padding-top:25px;
     overflow: hidden;
